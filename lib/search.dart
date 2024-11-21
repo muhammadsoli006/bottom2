@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/product.dart';
 
 class SearchScreen extends StatelessWidget {
   @override
@@ -40,7 +41,17 @@ class SearchScreen extends StatelessWidget {
 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        Container(
+          GestureDetector(
+            onTap: () async {
+            int? result = await Navigator.push( context, MaterialPageRoute(builder: (context)=> ProductPage(
+              'assets/meva2.png', 'Frash Fruits & Vegetable',)
+              ));
+              if (result!=null){
+                
+              }
+              print(result);
+          },
+         child: Container(
           margin: EdgeInsets.only(top: 15),
          width: 174.5,
            height: 189.11,
@@ -56,7 +67,15 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               style: TextStyle(fontSize: 16, color: Color(0xff181725),),
                textAlign: TextAlign.center,)],), 
         ),
-        Container(
+        ),
+
+        GestureDetector(
+          onTap: (){
+            Navigator.push( context, MaterialPageRoute(builder: (context)=> ProductPage(
+              'assets/meva22.png', 'Cooking Oil & Ghee',)
+              ));
+          },
+        child: Container(
           margin: EdgeInsets.only(top: 15),
          width: 174.5,
            height: 189.11,
@@ -71,13 +90,19 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                Text('Cooking Oil & Ghee' , 
               style: TextStyle(fontSize: 16, color: Color(0xff181725)),
               textAlign: TextAlign.center,)],),
-        ),
+        ),)
         ]),
 
        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        Container(
+          GestureDetector(
+            onTap: (){
+            Navigator.push( context, MaterialPageRoute(builder: (context)=> ProductPage(
+              'assets/meva3.png', 'Meat & Fish',)
+              ));
+          },
+        child: Container(
           margin: EdgeInsets.only(top: 15),
          width: 174.5,
            height: 189.11,
@@ -93,8 +118,15 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 Text('Meat & Fish', 
               style: TextStyle(fontSize: 16, color: Color(0xff181725),),
                )],), 
-        ),
-        Container(
+        ),),
+
+        GestureDetector(
+          onTap: (){
+            Navigator.push( context, MaterialPageRoute(builder: (context)=> ProductPage(
+              'assets/meva4.png', 'Bakery & Snacks',)
+              ));
+          },
+        child: Container(
           margin: EdgeInsets.only(top: 15),
          width: 174.5,
            height: 189.11,
@@ -109,13 +141,19 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                Text('Bakery & Snacks', 
               style: TextStyle(fontSize: 16, color: Color(0xff181725)),
               textAlign: TextAlign.center,)],),
-        ),
+        ),),
         ]),
 
         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        Container(
+          GestureDetector(
+            onTap: (){
+            Navigator.push( context, MaterialPageRoute(builder: (context)=> ProductPage(
+              'assets/meva5.png', 'Dairy & Eggs',)
+              ));
+          },
+        child: Container(
           margin: EdgeInsets.only(top: 15),
          width: 174.5,
            height: 189.11,
@@ -130,8 +168,15 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                Text('Dairy & Eggs', 
               style: TextStyle(fontSize: 16, color: Color(0xff181725),),
                textAlign: TextAlign.center,)],), 
-        ),
-        Container(
+        ),),
+        
+        GestureDetector(
+          onTap: (){
+            Navigator.push( context, MaterialPageRoute(builder: (context)=> ProductPage(
+              'assets/meva6.png', 'everages',)
+              ));
+          },
+        child: Container(
           margin: EdgeInsets.only(top: 15),
          width: 174.5,
            height: 189.11,
@@ -146,14 +191,10 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              Text('Beverages', 
               style: TextStyle(fontSize: 16, color: Color(0xff181725)),
               textAlign: TextAlign.center,)],),
-        ),
+        ),),
         ]),
       ],
     );
 
-            
-       
-      
-    
   }
 }

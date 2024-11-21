@@ -19,10 +19,20 @@ class CounterScreen extends StatefulWidget {
 
 class _CounterScreenState extends State<CounterScreen> {
   int _counter = 0;
+  bool loading = false;
 
-  void _incrementCounter() {
+
+
+  void _incrementCounter()async {
     setState(() {
+      loading = true;
+    });
+    await Future.delayed(Duration(seconds: 2));
+    setState(() {
+      
+
       _counter = (_counter + 1) % 11;
+      loading = false;
     });
   }
 
@@ -47,6 +57,7 @@ class _CounterScreenState extends State<CounterScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            if (loading) CircularProgressIndicator(),
             Text(
               '$_counter',
               style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
